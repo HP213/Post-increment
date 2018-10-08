@@ -1,3 +1,4 @@
+#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<conio.h>
@@ -6,6 +7,8 @@ struct ArrayStack{														/*Creating an structure to give value define the
 	int capacity;
 	char *array;
 };
+
+
 struct ArrayStack * CreateStack(int n)									/*Creating an pointer of structure type to address the structure pointing towards stack*/
 {
 	struct ArrayStack *stack;
@@ -15,6 +18,8 @@ struct ArrayStack * CreateStack(int n)									/*Creating an pointer of structur
 	stack->array=malloc(sizeof(char)*stack->capacity);/*Creating a dynamic array pointed by array pointer in structure*/
 	return(stack);
 }
+
+
 int ifFill(struct ArrayStack *stack)	/*Checking if the given stack is full or not*/
 {
 	struct ArrayStack *temp;
@@ -26,6 +31,7 @@ int ifFill(struct ArrayStack *stack)	/*Checking if the given stack is full or no
 	else
 	return(0);
 }
+
 int ifEmpty(struct ArrayStack *stack) /*Checking if the given stack is empty or not*/
 {
 	struct ArrayStack * temp;
@@ -38,6 +44,7 @@ int ifEmpty(struct ArrayStack *stack) /*Checking if the given stack is empty or 
 	else
 	return(0);
 }
+
 void Push(struct ArrayStack *stack, char ch) /*Adding values if space avialable*/
 {
 	if(!ifFill(stack))
